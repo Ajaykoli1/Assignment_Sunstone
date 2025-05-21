@@ -1,0 +1,68 @@
+package Sunstone_Training;
+
+class Shape {
+
+    double area;
+
+    public Shape() {
+        System.out.println("Default constructor: No shape selected yet.");
+    }
+
+    public Shape(double side) {
+        area = side * side;
+    }
+
+    public Shape(double length, double width) {
+        area = length * width;
+    }
+
+    public Shape(double radius, boolean isCircle) {
+        if (isCircle) {
+            area = 3.14 * radius * radius; 
+        }
+    }
+
+    public void displaySquare() {
+        System.out.println("Area of Square: " + area);
+    }
+
+    public void displayRectangle() {
+        System.out.println("Area of Rectangle: " + area);
+    }
+
+    public void displayCircle() {
+        System.out.println("Area of Circle: " + area);
+    }
+
+
+    public void area(double base, double height) {
+        double triangleArea = 0.5 * base * height;
+        System.out.println("Area of Triangle: " + triangleArea);
+    }
+
+    public void area(int d1, int d2) {
+        double rhombusArea = 0.5 * d1 * d2;
+        System.out.println("Area of Rhombus: " + rhombusArea);
+    }
+}
+
+public class Assignment {
+
+    public static void main(String[] args) {
+
+        Shape s1 = new Shape();
+        Shape square = new Shape(4);
+        square.displaySquare();
+
+        Shape rectangle = new Shape(5, 3);
+        rectangle.displayRectangle();
+
+        Shape circle = new Shape(2.5, true);
+        circle.displayCircle();
+
+        Shape shape = new Shape(); 
+
+        shape.area(6.0, 4.0);  
+        shape.area(10, 8);     
+    }
+}
