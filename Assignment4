@@ -1,0 +1,55 @@
+package Sunstone_Training;
+
+abstract class Marks {
+ abstract double getPercentage(); 
+}
+
+
+class A extends Marks {
+ int sub1, sub2, sub3;
+
+
+ public A(int s1, int s2, int s3) {
+     sub1 = s1;
+     sub2 = s2;
+     sub3 = s3;
+ }
+
+ 
+ double getPercentage() {
+     int total = sub1 + sub2 + sub3;
+     return (total / 3.0); 
+ }
+}
+
+
+class B extends Marks {
+ int sub1, sub2, sub3, sub4;
+
+
+ public B(int s1, int s2, int s3, int s4) {
+     sub1 = s1;
+     sub2 = s2;
+     sub3 = s3;
+     sub4 = s4;
+ }
+
+ 
+ double getPercentage() {
+     int total = sub1 + sub2 + sub3 + sub4;
+     return (total / 4.0); 
+ }
+}
+
+
+public class Assignment {
+ public static void main(String[] args) {
+    
+     A studentA = new A(80, 75, 90);
+     System.out.println("Student A Percentage: " + studentA.getPercentage() + "%");
+
+     
+     B studentB = new B(70, 85, 78, 90);
+     System.out.println("Student B Percentage: " + studentB.getPercentage() + "%");
+ }
+}
